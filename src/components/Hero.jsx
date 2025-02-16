@@ -7,7 +7,6 @@ const Hero = () => {
       <div className="container mx-auto px-6 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
-          {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -16,7 +15,7 @@ const Hero = () => {
             className="text-white space-y-6"
           >
             <h2 className="text-xl font-medium italic text-[#EAE0D2]">
-              Maa hai na.
+              Maa hai na!
             </h2>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -26,8 +25,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-[#EAE0D2]/90 max-w-xl">
-              MAA ensures you never miss a medication. Get timely reminders, 
-              track dosages, and stay on top of your health effortlessly.
+            Are you tired of outdated paper systems and missed prescriptions? MAA streamlines medication management for hospitals with automated reminders, real-time tracking, and seamless patient coordination. Upgrade to smarter healthcare today!
             </p>
             
             <Link to="/partner">

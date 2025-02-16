@@ -12,8 +12,6 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  // Protected Route wrapper component
   const ProtectedRoute = ({ children }) => {
     
     if (!isAuthenticated) {
@@ -37,7 +35,6 @@ function App() {
       <ScrollToTop />
       <Layout onLogout={handleLogout} isAuthenticated={isAuthenticated}>
         <Routes>
-          {/* Public routes */}
           <Route path="/" element={
             isAuthenticated ? 
             <Navigate to="/dashboard" replace /> : 
@@ -56,7 +53,6 @@ function App() {
             } 
           />
 
-          {/* Protected routes */}
           <Route
             path="/dashboard"
             element={
@@ -68,7 +64,6 @@ function App() {
 
           <Route path="/partner" element={<Partner />} />
 
-          {/* Catch all route */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Layout>
