@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -29,14 +30,16 @@ const Hero = () => {
               track dosages, and stay on top of your health effortlessly.
             </p>
             
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#A68763] hover:bg-[#8B7355] text-white font-semibold 
-                px-8 py-4 rounded-lg shadow-lg transition-colors duration-300"
-            >
-              Get Started
-            </motion.button>
+            <Link to="/partner">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#A68763] hover:bg-[#8B7355] text-white font-semibold 
+                  px-8 py-4 rounded-lg shadow-lg transition-colors duration-300"
+              >
+                Get Started
+              </motion.button>
+            </Link>
           </motion.div>
           
           {/* App Mockup */}

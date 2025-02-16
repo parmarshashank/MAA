@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaClock, FaUserMd, FaHospital, FaHandshake } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const fadeIn = {
@@ -96,11 +97,14 @@ const About = () => {
               className="pt-8"
               variants={fadeIn}
             >
-              <button className="bg-[#2D2D2D] text-white px-8 py-4 rounded-lg font-semibold 
-                               hover:scale-105 transition-transform duration-300 
-                               shadow-md hover:shadow-lg">
-                Partner with MAA
-              </button>
+              <Link to="/partner">
+                <motion.button 
+                  className="bg-[#2D2D2D] text-white px-8 py-4 rounded-lg font-semibold 
+                            hover:scale-105 transition-transform duration-300 
+                            shadow-md hover:shadow-lg">
+                  Partner with MAA
+                </motion.button>
+              </Link>
             </motion.div>
           </motion.div>
 

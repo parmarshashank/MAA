@@ -6,14 +6,20 @@ import './App.css';
 import Hero from './components/Hero';
 import About from './components/About';
 import Dashboard from './components/Dashboard';
+import MobileApp from './components/MobileApp';
+import Partner from './components/Partner';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Protected Route wrapper component
   const ProtectedRoute = ({ children }) => {
+    
     if (!isAuthenticated) {
       return <Navigate to="/login" replace />;
+
+      
     }
     return children;
   };
@@ -28,13 +34,17 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Layout onLogout={handleLogout} isAuthenticated={isAuthenticated}>
         <Routes>
           {/* Public routes */}
           <Route path="/" element={
             isAuthenticated ? 
             <Navigate to="/dashboard" replace /> : 
-            <Hero />
+            <>
+              <Hero />
+              <MobileApp />
+            </>
           } />
           <Route path="/about" element={<About />} />
           <Route 
@@ -55,6 +65,8 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route path="/partner" element={<Partner />} />
 
           {/* Catch all route */}
           <Route path="*" element={<Navigate to="/" replace />} />
