@@ -48,7 +48,11 @@ const Hero = () => {
           >
             <div className="w-full h-[600px] bg-[#EAE0D2]/10 rounded-2xl backdrop-blur-sm
               border border-white/20 flex items-center justify-center">
-              <img src="./assets/placeholder.gif" alt="App Mockup" className="w-full h-full object-cover" />
+              <img 
+                src="./src/assets/p1.webp" 
+                alt="MAA App Mockup" 
+                className="w-full h-full object-cover rounded-2xl" 
+              />
             </div>
           </motion.div>
           
