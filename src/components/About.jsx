@@ -117,7 +117,7 @@ const About = () => {
           >
             <div className="bg-[#D7C9AE]/20 rounded-2xl h-[600px] w-full flex items-center justify-center">
               <p className="text-[#A68763] text-lg">
-                <img src='./src/assets/p3.webp' alt='p1' className='w-full h-full object-cover' />
+                <img src={"/src/assets/p3.webp"} alt="p1" className='w-full h-full object-cover' />
               </p>
             </div>
           </motion.div>
