@@ -16,7 +16,6 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
     setLoading(true);
     
-    // Simulated API call
     setTimeout(() => {
       setLoading(false);
       onLogin();

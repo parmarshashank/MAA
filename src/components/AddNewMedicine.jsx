@@ -10,7 +10,6 @@ const AddNewMedicine = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add API call logic here
     console.log('Submitting:', formData);
   };
 

@@ -13,7 +13,6 @@ const AssignMedicines = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add API call logic here
     console.log('Submitting:', formData);
     setIsModalOpen(false);
   };
@@ -27,7 +26,6 @@ const AssignMedicines = () => {
         Assign Medicines
       </button>
 
-      {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
           <motion.div
@@ -62,7 +60,6 @@ const AssignMedicines = () => {
                   onChange={(e) => setFormData({...formData, medicineId: e.target.value})}
                 >
                   <option value="">Select Medicine</option>
-                  {/* Add medicine options here */}
                 </select>
               </div>
 

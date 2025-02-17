@@ -16,8 +16,6 @@ function App() {
     
     if (!isAuthenticated) {
       return <Navigate to="/login" replace />;
-
-      
     }
     return children;
   };

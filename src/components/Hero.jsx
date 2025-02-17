@@ -40,7 +40,6 @@ const Hero = () => {
             </Link>
           </motion.div>
           
-          {/* App Mockup */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -50,7 +49,7 @@ const Hero = () => {
             <div className="w-full h-[600px] bg-[#EAE0D2]/10 rounded-2xl backdrop-blur-sm
               border border-white/20 flex items-center justify-center">
               <img 
-                src={"/src/assets/p1.webp"}
+                src="\public\assets\p1.webp"
                 alt="MAA App Mockup" 
                 className="w-full h-full object-cover rounded-2xl" 
               />

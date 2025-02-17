@@ -18,13 +18,10 @@ const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   useEffect(() => {
-    // Fetch doctor's name from API
-    // This is a placeholder - replace with actual API call
     setDoctorName('John Smith');
   }, []);
 
   const handleLogout = () => {
-    // Add logout logic here
     console.log('Logging out...');
   };
 
@@ -35,7 +32,6 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-[#EAE0D2] flex">
-      {/* Toggle Button */}
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         className="fixed top-4 left-4 z-50 p-2 rounded-lg bg-[#2D2D2D] text-white hover:bg-[#A68763] transition-colors"
@@ -43,7 +39,6 @@ const Dashboard = () => {
         {isSidebarOpen ? <FaTimes /> : <FaBars />}
       </button>
 
-      {/* Sidebar */}
       <AnimatePresence>
         {isSidebarOpen && (
           <motion.div 
@@ -91,7 +86,6 @@ const Dashboard = () => {
                   <span>Settings</span>
                 </button>
 
-                {/* Moved Logout Button */}
                 <motion.button
                   onClick={handleLogout}
                   whileHover={{ scale: 1.05 }}
@@ -113,12 +107,10 @@ const Dashboard = () => {
         )}
       </AnimatePresence>
 
-      {/* Main Content Area */}
       <motion.div 
         className={`flex-1 p-8 transition-all duration-300`}
         style={{ marginLeft: isSidebarOpen ? "256px" : "0px" }}
       >
-        {/* Welcome Message */}
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -142,7 +134,6 @@ const Dashboard = () => {
           </div>
         </motion.div>
 
-        {/* Dynamic Content */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -156,7 +147,6 @@ const Dashboard = () => {
           ) : (
             <div className="p-6">
               <h2 className="text-2xl font-bold text-[#2D2D2D] mb-4">Settings</h2>
-              {/* Add your settings component here */}
               <p className="text-[#A68763]">Settings panel coming soon...</p>
             </div>
           )}

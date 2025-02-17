@@ -37,7 +37,6 @@ const About = () => {
     <div className="min-h-screen bg-gradient-to-br from-[#EAE0D2] to-[#A68763]/10 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Section - Text Content */}
           <motion.div 
             className="space-y-8"
             initial="initial"
@@ -117,7 +116,7 @@ const About = () => {
           >
             <div className="bg-[#D7C9AE]/20 rounded-2xl h-[600px] w-full flex items-center justify-center">
               <p className="text-[#A68763] text-lg">
-                <img src={"/src/assets/p3.webp"} alt="p1" className='w-full h-full object-cover' />
+                <img src="public/assets/p3.webp" alt="p1" className='w-full h-full object-cover' />
               </p>
             </div>
           </motion.div>

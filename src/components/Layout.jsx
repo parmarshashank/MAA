@@ -13,7 +13,6 @@ const Layout = ({ children, onLogout, isAuthenticated }) => {
   
   const isHomePage = location.pathname === '/';
 
-  // Update header transparency based on scroll position
   useEffect(() => {
     const unsubscribe = scrollY.onChange(latest => {
       setIsScrolled(latest > 20);
@@ -51,7 +50,6 @@ const Layout = ({ children, onLogout, isAuthenticated }) => {
       animate={{ opacity: 1 }}
       className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAE0D2] to-[#A68763]/10"
     >
-      {/* Header */}
       <motion.header 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -68,7 +66,6 @@ const Layout = ({ children, onLogout, isAuthenticated }) => {
         className="fixed w-full top-0 z-50 transition-all duration-300"
       >
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          {/* Logo */}
           <motion.div
             style={{ scale: logoScale }}
             whileHover={{ scale: 1.05 }}
@@ -78,7 +75,6 @@ const Layout = ({ children, onLogout, isAuthenticated }) => {
             </Link>
           </motion.div>
 
-          {/* Navigation Links and Auth Buttons */}
           <div className="flex items-center space-x-8">
             <motion.nav className="hidden md:flex space-x-8">
               <Link to="/" className="text-[#EAE0D2] hover:text-white transition-colors">
@@ -94,7 +90,6 @@ const Layout = ({ children, onLogout, isAuthenticated }) => {
               )}
             </motion.nav>
 
-            {/* Logout Button - Only show when authenticated */}
             {isAuthenticated && (
               <motion.button
                 onClick={onLogout}
@@ -112,17 +107,15 @@ const Layout = ({ children, onLogout, isAuthenticated }) => {
         </div>
       </motion.header>
 
-      {/* Main Content */}
       <motion.main 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="flex-grow pt-20" // Increased padding-top
+        className="flex-grow pt-20" 
       >
         {children}
       </motion.main>
 
-      {/* Footer - Only show on public pages */}
       {!isAuthenticated && <Footer />}
     </motion.div>
   );
