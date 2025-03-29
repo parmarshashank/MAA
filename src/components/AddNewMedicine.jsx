@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const AddNewMedicine = () => {
+  const [medicines, setMedicines] = useState([]);
   const [formData, setFormData] = useState({
     name: '',
     id: '',
@@ -10,7 +11,13 @@ const AddNewMedicine = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Submitting:', formData);
+    setMedicines([...medicines, formData]);
+    setFormData({
+      name: '',
+      id: '',
+      description: ''
+    });
+    console.log('Medicines database:', medicines);
   };
 
   return (
@@ -31,6 +38,7 @@ const AddNewMedicine = () => {
           <input
             type="text"
             required
+            value={formData.name}
             className="w-full p-3 border border-[#D7C9AE] rounded-lg focus:ring-2 focus:ring-[#A68763]"
             onChange={(e) => setFormData({...formData, name: e.target.value})}
           />
@@ -43,6 +51,7 @@ const AddNewMedicine = () => {
           <input
             type="text"
             required
+            value={formData.id}
             className="w-full p-3 border border-[#D7C9AE] rounded-lg focus:ring-2 focus:ring-[#A68763]"
             onChange={(e) => setFormData({...formData, id: e.target.value})}
           />
@@ -54,6 +63,7 @@ const AddNewMedicine = () => {
           </label>
           <textarea
             required
+            value={formData.description}
             rows="4"
             className="w-full p-3 border border-[#D7C9AE] rounded-lg focus:ring-2 focus:ring-[#A68763]"
             onChange={(e) => setFormData({...formData, description: e.target.value})}
@@ -67,6 +77,21 @@ const AddNewMedicine = () => {
           Add Medicine
         </button>
       </form>
+
+      {medicines.length > 0 && (
+        <div className="mt-8">
+          <h3 className="text-xl font-semibold mb-4">Current Medicines</h3>
+          <div className="space-y-2">
+            {medicines.map((medicine, index) => (
+              <div key={index} className="p-3 bg-gray-50 rounded-lg">
+                <p className="font-medium">{medicine.name}</p>
+                <p className="text-sm text-gray-600">ID: {medicine.id}</p>
+                <p className="text-sm text-gray-600">{medicine.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </motion.div>
   );
 };

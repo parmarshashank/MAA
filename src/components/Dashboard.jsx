@@ -7,10 +7,12 @@ import {
   FaUserMd, 
   FaCog,
   FaBars,
-  FaTimes
+  FaTimes,
+  FaRobot
 } from 'react-icons/fa';
 import AssignMedicines from './AssignMedicines';
 import AddNewMedicine from './AddNewMedicine';
+import AskAI from './AskAI';
 
 const Dashboard = () => {
   const [doctorName, setDoctorName] = useState('');
@@ -18,7 +20,7 @@ const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   useEffect(() => {
-    setDoctorName('John Smith');
+    setDoctorName('Shashank Parmar');
   }, []);
 
   const handleLogout = () => {
@@ -73,6 +75,17 @@ const Dashboard = () => {
                 >
                   <FaPlus />
                   <span>Add New Medicine</span>
+                </button>
+
+                <button
+                  onClick={() => setActiveComponent('ask-ai')}
+                  className={`w-full flex items-center space-x-3 p-3 rounded-lg transition-colors
+                    ${activeComponent === 'ask-ai' 
+                      ? 'bg-[#A68763] text-white' 
+                      : 'text-[#D7C9AE] hover:bg-[#A68763]/20'}`}
+                >
+                  <FaRobot />
+                  <span>Ask AI Assistant</span>
                 </button>
 
                 <button
@@ -144,6 +157,8 @@ const Dashboard = () => {
             <AssignMedicines />
           ) : activeComponent === 'add' ? (
             <AddNewMedicine />
+          ) : activeComponent === 'ask-ai' ? (
+            <AskAI />
           ) : (
             <div className="p-6">
               <h2 className="text-2xl font-bold text-[#2D2D2D] mb-4">Settings</h2>
